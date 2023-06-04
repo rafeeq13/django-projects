@@ -1,0 +1,31 @@
+   *{
+    margin :0px;
+    padding: 0px;
+    box-sizing: border-box;
+   }
+   body {
+    background-color: rgb(102, 102, 112);
+    
+    
+  } 
+
+#row1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aqua;
+  /* margin: 10px 30px; */
+  
+}
+#row2{
+  display: flex;
+  justify-content: center;
+  background-color: rgba(62, 165, 212, 0.308);
+}
+#row3{
+  display: flex;
+  justify-content: center;
+  height: 70vh;
+  background-color: rgba(62, 165, 212, 0.308);
+}
+

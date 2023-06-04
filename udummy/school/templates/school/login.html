@@ -1,0 +1,29 @@
+{% extends 'school/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="contanier">
+    <div class="row" id="row2">
+        <div class="col-md-4">
+    <form action="" method="post" novalidate>
+        {% csrf_token %}
+        {% if messages%}
+        {% for message in messages %}
+        <small {% if message.tags %} class="{{message.tags}}"{% endif %} >{{message}}</small>
+        {% endfor %}
+        {% endif %}
+        {% for fm in form  %}
+        {{fm.label_tag}}{{fm}}{{fm.errors}} <br> <br>
+        {% endfor %}
+
+        {% if form.non_field_errors %}
+        {% for errors in  form.non_field_errors  %}
+        <p>{{errors}}</p>
+        {% endfor %}{% endif %}
+        <input type="submit" value="login">
+        <a href="{% url 'signup' %}">signup</a>
+    </form>
+</div>
+</div>
+</div>
+{% endblock content %}

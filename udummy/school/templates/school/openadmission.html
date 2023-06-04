@@ -1,0 +1,56 @@
+{% extends 'school/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="contanier">
+    <div class="row" id="row2">
+        <div class="col-md-4">
+            <form action="" method="post" enctype="multipart/form-data" class="mt-5 text-white">
+                
+                {% csrf_token %}
+                <h4 class="btn btn-danger" style="font-weight:bold;background-color:green;padding:10px;">Upload Courses Detail</h4> <br>
+                {% for fm in form %}
+                {{ fm.label_tag }}{{ fm }}{{ fm.errors }} <br>
+                {% endfor %}
+                <input type="submit" class="mb-3 btn btn-danger" value="Submit">
+            </form>
+        </div>
+        <div class="col-6 mt-5">
+            <h2 style="background-color:lightblue;padding:10px;" class="text-center">Admissions Open </h2>
+            <table class="table table-hover mt-5 bg-danger text-white">
+                <thead>
+                    <tr>
+                        <th scope="col">Course Id</th>
+                        <th scope="col">Course Name</th>
+                        <th scope="col">Fee</th>
+                        <th scope="col">Last Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for st in fm %}
+                    <tr>
+                        <th scope="row">{{ st.id }}</th>
+                        <td>{{ st.course }}</td>
+                        <td>{{ st.fee }}</td>
+                        <td>{{ st.last_date }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+  {% endblock content %}
+  
+
+
+
+
+
+
+ <!--<div class="col-md-4">
+    
+</div>
+<div class="col-md-8">
+    
+</div>

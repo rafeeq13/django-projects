@@ -1,0 +1,63 @@
+{% extends 'school/base.html' %}
+{% load static %}
+{% block content %}
+<div class="contaoner">
+  <div class="row" id="row3">
+    <div class="col-md-5">
+      <h2 class="text-white mt-5 text-center" style="background-color:green; padding:10px;">Message received</h2>
+          <table class="table table-hover bg-secondary text-white text-justify">
+              <thead>
+                <tr>
+                  <th scope="col">Id</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Phone</th>
+                  <th scope="col">Message </th>
+                </tr>
+              </thead>
+              <tbody>
+                  {% for fm in form %}
+                <tr>
+                  <th scope="row">{{fm.id}}</th>
+                  <td>{{fm.email}}</td>
+                  <td>{{fm.ph_no}}</td>
+                  <td>{{fm.message}}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+    </div>
+    <div class="col-md-7">
+      <h4 class="text-white mt-5 text-center" style="background-color:green; padding:15px;">Application Form</h4>
+      <table class="table table-hover bg-white text-justify">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Date Of Birth</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone No </th>
+            <th scope="col">Last Degree </th>
+            <th scope="col">Applied For </th>
+            <th scope="col">Gender </th>
+            <th scope="col">Address  </th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for st in fm %}
+          <tr>
+            <th scope="row">{{st.name}}</th>
+            <td>{{st.dob}}</td>
+            <td>{{st.email}}</td>
+            <td>{{st.mobile}}</td>
+            <td>{{st.last_degree}}</td>
+            <td>{{st.course}}</td>
+            <td>{{st.gender}}</td>
+            <td>{{st.address}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock content %}
+

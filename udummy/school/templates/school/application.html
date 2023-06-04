@@ -1,0 +1,18 @@
+{% extends 'school/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row" id="row2">
+    <h3 style="font-weight:bold; color:white;background-color:green; margin-top:25px;text-align:center; padding: 10px;">Application Form</h3>
+    <div class="col-md-6">
+                <form action="" method="post" class="mt-5 text-white">
+                    {% csrf_token %}
+                    {% for st in form %}
+                    {{st.label_tag}}{{st}}{{st.errors}} <hr class='bg-info'>
+                    {% endfor %}
+                    <input type="submit" class="mb-4 font-weight-bold btn btn-success"value="Submit">
+    </form>
+    </div>
+</div>
+</div>
+{% endblock content %}
